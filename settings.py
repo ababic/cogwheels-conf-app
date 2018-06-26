@@ -3,8 +3,8 @@ import sys
 from cogwheels import BaseAppSettingsHelper
 
 
-class AppSettingsHelper(BaseAppSettingsHelper):
+class MyAppSettingsHelper(BaseAppSettingsHelper):
     pass
 
 
-sys.modules[__name__] = AppSettingsHelper()
+sys.modules[__name__] = MyAppSettingsHelper()
