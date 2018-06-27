@@ -1,53 +1,41 @@
 """
-Add any app settings you wish to support here with a default value. 
-"""
+Any setting you wish to support in your app must be defined here with a
+sensible default value.
 
-# -----------------------------------------------------------------------------
-# Standard python type settings
-# -----------------------------------------------------------------------------
+**DO:**
 
-"""
-e.g.
+- Use upper case names for settings
+- Feel free to use values of any built-in python type
 
-SEND_SCHMECKLES = True
+**DON'T:**
 
-MAX_SCHMECKLES_PER_PERSON = 5
+- Prefix setting names with 'YOURAPP_' or similar (that isn't necessary here)
+- Put all your configuration in one giant dictionary (that's just lazy!)
 
-OPTIONS_DICT = {
-    'default': {
-        'beep': 'boop',
-    }
-}
-"""
 
-# -----------------------------------------------------------------------------
-# Django model settings
-# -----------------------------------------------------------------------------
+Django model settings
+---------------------
 
-"""
-e.g.
+For settings that refer to Django models, the default value should be a string
+in the format 'app_name.Model', e.g.:
 
-PROFILE_MODEL = 'project_profiles.Profile'
+ORDER_ITEM_MODEL = 'yourproject.SimpleOrderItem'
 
-DOCUMENT_MODEL = 'project_documents.Document'
-"""
 
-# -----------------------------------------------------------------------------
-# Python module settings
-# -----------------------------------------------------------------------------
+Python module settings
+----------------------
 
-"""
-e.g.
+For settings that refer to Python modules, the default value should be an
+'import path' string, e.g.:
 
-BACKEND = 'myapp.subapp.backends.default'
-"""
+DISCOUNTS_BACKEND = 'yourproject.discount_backends.simple'
 
-# -----------------------------------------------------------------------------
-# Class settings
-# -----------------------------------------------------------------------------
 
-"""
-e.g.
+Other importable python object settings
+---------------------------------------
+
+For settings that refer to classes, methods, or other importable Python
+objects, the default value should be an 'object import path' string, e.g.:
 
 EDIT_FORM = 'myapp.subapp.forms.DefaultEditForm'
 
