@@ -2,16 +2,19 @@
 Any setting you wish to support in your app must be defined here with a
 sensible default value.
 
-**DO:**
-
-- Use upper case names for settings
-- Feel free to use values of any built-in python type
-
-**DON'T:**
-
-- Prefix setting names with 'YOURAPP_' or similar (that isn't necessary here)
-- Put all your configuration in one giant dictionary (that's just lazy!)
-
+-   The variable names for your settings should be in upper case
+    (e.g. SOME_SETTING).
+-   There's no need to prefix setting names with "YOURAPP_" or similar here.
+    Cogwheels will take care of adding this prefix automatically when it is
+    useful.
+-   You can use any native Python type as a value (e.g. string, int, boolean,
+    float, list, tuple, dict, date, time), but try to stick to well-known types
+    that are easy for your app's users to define when they want to override
+    something.
+-   It's absolutely fine to use dictionaries to allow overriding of more
+    complicated features, but try to avoid grouping together unrelated bits of
+    configuration into larger dictionaries when they would make more sense as
+    separate settings.
 
 Django model settings
 ---------------------
